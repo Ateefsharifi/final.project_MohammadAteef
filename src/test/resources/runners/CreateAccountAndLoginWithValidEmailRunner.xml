@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="finalProjectMohammadAteef">
+    <test name="CreatingAccountWithValidEmail">
+        <classes>
+            <class name="Tests.CreatePrimaryAccountPageTest"  />
+        </classes>
+    </test>
+    <test name="SignUpWithValidAccount">
+        <classes>
+            <class name="Tests.SignUpTest"  />
+        </classes>
+    </test>
+
+</suite>

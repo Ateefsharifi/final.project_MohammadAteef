@@ -23,7 +23,7 @@ public abstract class BaseSetup {
     private final Properties properties;
 
     public BaseSetup() {
-        String configFilePath=System.getProperty("user.dir")+"src/test/resources/configs/dev-config.properties";
+        String configFilePath=System.getProperty("user.dir")+"/src/test/resources/configs/dev-config.properties";
         try{
             LOGGER.debug("Reading config file from path {}",configFilePath);
             InputStream inputStream=new FileInputStream(configFilePath);
@@ -72,10 +72,10 @@ public abstract class BaseSetup {
 
     }
     public void quiteBrowser(){
-        if (driver!=null){
-            LOGGER.info("Browser quite");
-            driver.quit();
-        }
+       if (driver!=null){
+           LOGGER.info("Browser quite");
+           driver.quit();
+       }
     }
     public WebDriver getDriver(){
         return driver;
