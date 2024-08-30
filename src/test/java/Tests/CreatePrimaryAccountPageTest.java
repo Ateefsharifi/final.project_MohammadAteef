@@ -1,8 +1,6 @@
 package Tests;
 import Base.TekInsurance;
-import net.bytebuddy.implementation.bytecode.Throw;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.TimeoutException;
+import Common.RandomGenerateEmail;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,21 +8,20 @@ import org.testng.annotations.Test;
 
 public class CreatePrimaryAccountPageTest extends TekInsurance {
     public static String ActualEmail;
+    RandomGenerateEmail objRandomEmail=new RandomGenerateEmail();
 
     @Test(testName = "CreatingAccountWithValidEmail")
     public void createAccountWithValidEmail() throws InterruptedException {
         clickOnElement(homePage.CreatePrimaryAccount);
         Assert.assertTrue(isElementDisplay(createPrimaryAccountPage.CreateAccountHolder), "primary Account Creation");
-        fillCreateAccountForm("AhmadNawabi95@gmail.com");
+        ActualEmail=objRandomEmail.generateRandomEmail();
+        fillCreateAccountForm(ActualEmail);
          try {
                  creatingAccountSignUp();
 
          }catch (Exception exception){
              System.out.println(exception.toString());
-
          }
-
-
     }
 
     @Test(testName = "createAccountWithExistingEmail")
