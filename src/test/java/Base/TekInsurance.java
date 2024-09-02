@@ -1,14 +1,10 @@
 package Base;
-import Tests.CreatePrimaryAccountPageTest;
-import Tests.SignUpTest;
+import Tests.*;
 import Utility.SeleniumUtility;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.*;
-import Tests.HomePageTest;
-import pages.CreatePrimaryAccountPage;
-import pages.HomePage;
-import pages.SignUpPage;
+import pages.*;
 
 public class
 TekInsurance extends SeleniumUtility {
@@ -19,6 +15,10 @@ TekInsurance extends SeleniumUtility {
     public CreatePrimaryAccountPageTest createPrimaryAccountPageTest;
     public SignUpPage signUpPage;
     public SignUpTest signUpTest;
+    public LoginPage loginPage;
+    public LoginPageTest loginPageTest;
+    public UserProfile userProfile;
+    public UserProfileTest userProfileTest;
 
 
     @BeforeSuite
@@ -31,6 +31,10 @@ TekInsurance extends SeleniumUtility {
         createPrimaryAccountPageTest=new CreatePrimaryAccountPageTest();
         signUpPage=new SignUpPage();
         signUpTest=new SignUpTest();
+        loginPage=new LoginPage();
+        loginPageTest=new LoginPageTest();
+        userProfile=new UserProfile();
+        userProfileTest=new UserProfileTest();
 
     }
     @AfterSuite

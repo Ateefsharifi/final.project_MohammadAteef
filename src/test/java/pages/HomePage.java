@@ -10,8 +10,13 @@ public class HomePage extends SeleniumUtility {
     public HomePage() {
         PageFactory.initElements(getDriver(),this);
     }
+    @FindBy(className = "css-1wh2kri")
+    public WebElement LoginBTN;
+
     @FindBy(className = "css-1jp0m7c")
     public WebElement CreatePrimaryAccount;
+
+
 
 
 

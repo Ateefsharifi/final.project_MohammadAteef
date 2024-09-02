@@ -26,6 +26,7 @@ public class SeleniumUtility extends BaseSetup {
     }
 
     public void clickOnElement(WebElement element){
+        LOGGER.debug("clickable element{}",element);
        getWait().until(ExpectedConditions.elementToBeClickable(element)).click();
 
     }
@@ -34,10 +35,12 @@ public class SeleniumUtility extends BaseSetup {
         return getWait().until(ExpectedConditions.visibilityOf(element)).isDisplayed();
     }
     public void sendText(WebElement element,String value){
+        LOGGER.debug("sending text to element{}",element);
         getWait().until(ExpectedConditions.visibilityOf(element)).sendKeys(value);
 
     }
     public void dropDownByValue(WebElement element,int index){
+        LOGGER.debug("selecting value from dropdown{}",element);
        Select selectDropDown=new Select(getWait().until(ExpectedConditions.visibilityOf(element)));
         //List<WebElement> option=selectDropDown.getOptions();
         selectDropDown.selectByIndex(index);

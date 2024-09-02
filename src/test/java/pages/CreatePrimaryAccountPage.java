@@ -4,6 +4,7 @@ import Utility.SeleniumUtility;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.DataProvider;
 
 
 public class CreatePrimaryAccountPage extends SeleniumUtility {
@@ -47,8 +48,7 @@ public class CreatePrimaryAccountPage extends SeleniumUtility {
     @FindBy(className = "css-tidvy5")
     public WebElement CreateAccountExistError;
 
-
-
-
+    @FindBy(xpath = "//*/div/div[2]/div/div/div/form/div[1]/div")
+    public WebElement ageErrorMessage;
 
 }
