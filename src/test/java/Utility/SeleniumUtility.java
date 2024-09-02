@@ -9,8 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.lang.model.element.Element;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 
 public class SeleniumUtility extends BaseSetup {
     private static final Logger LOGGER= LogManager.getLogger(SeleniumUtility.class);
@@ -44,7 +46,9 @@ public class SeleniumUtility extends BaseSetup {
        Select selectDropDown=new Select(getWait().until(ExpectedConditions.visibilityOf(element)));
         //List<WebElement> option=selectDropDown.getOptions();
         selectDropDown.selectByIndex(index);
-
+    }
+    public List<WebElement> findElement(WebElement element){
+       return getWait().until(ExpectedConditions.visibilityOfAllElements(element));
     }
 
 

@@ -10,11 +10,19 @@ public class UserProfileTest extends TekInsurance {
     @Test
     public void ValidateUserProfile(){
         LoginWithValidCredential(LoginUserName,LoginPassword);
+
+        Assert.assertTrue(userProfile.CustomerServicePortal.isDisplayed());
+        clickOnElement(userProfile.Profile);
+        Assert.assertEquals(LoginUserName,getElementText(userProfile.SideMenuUserName));
+        clickOnElement(userProfile.SideMenuProfileClose);
+
+
     }
 
     @Test
     public void LoggingInWithValidCredentialAndLogOUt(){
         LoginWithValidCredentialAndLogout(LoginUserName,LoginPassword);
+
         Assert.assertEquals(getDriver().getTitle(),"Tek Insurance UI");
     }
 
@@ -25,10 +33,7 @@ public class UserProfileTest extends TekInsurance {
         sendText(loginPage.UserName,UserName);
         sendText(loginPage.password, Password);
         clickOnElement(loginPage.SignInBTN);
-        Assert.assertTrue(userProfile.CustomerServicePortal.isDisplayed());
-        clickOnElement(userProfile.Profile);
-        Assert.assertEquals(LoginUserName,getElementText(userProfile.SideMenuUserName));
-        clickOnElement(userProfile.SideMenuProfileClose);
+
     }
 
     public void LoginWithValidCredentialAndLogout(String UserName,String Password){
