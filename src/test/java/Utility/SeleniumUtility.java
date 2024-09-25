@@ -47,9 +47,13 @@ public class SeleniumUtility extends BaseSetup {
         //List<WebElement> option=selectDropDown.getOptions();
         selectDropDown.selectByIndex(index);
     }
-    public List<WebElement> findElement(WebElement element){
-       return getWait().until(ExpectedConditions.visibilityOfAllElements(element));
+    public List<WebElement> findElements(WebElement element){
+        return getWait().until(ExpectedConditions.visibilityOfAllElements(element));
     }
+    public WebElement findElement(WebElement element){
+        return getWait().until(ExpectedConditions.visibilityOf(element));
+    }
+
 
 
 

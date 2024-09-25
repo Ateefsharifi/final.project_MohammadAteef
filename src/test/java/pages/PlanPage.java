@@ -15,9 +15,12 @@ public class PlanPage extends SeleniumUtility {
     @FindBy(xpath = "//*/div/div[2]/div/div/a[2]")
     public WebElement PlanBTN;
 
-    @FindBy(className = "css-1zts0j")
-    public WebElement PlanDataElements;
+    @FindBy(xpath = "//*/div/div[3]/div/div/div/div/table")
+    public WebElement PlanTable;
 
+    @FindBy(xpath = "//*/div/div[3]/div/div/div/div/table/tbody/tr")
+    public WebElement tableRow;
 
-
+    @FindBy(xpath = "//*/div/div[3]/div/div/div/div/table/tbody/tr/td")
+    public WebElement tableCol;
 }
