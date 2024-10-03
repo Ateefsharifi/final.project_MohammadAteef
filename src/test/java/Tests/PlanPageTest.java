@@ -1,19 +1,14 @@
 package Tests;
 
 import Base.TekInsurance;
-import com.google.common.collect.Table;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.PlanPage;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PlanPageTest extends TekInsurance {
 
