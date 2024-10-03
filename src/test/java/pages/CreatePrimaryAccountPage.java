@@ -13,10 +13,10 @@ public class CreatePrimaryAccountPage extends SeleniumUtility {
     }
 
     @FindBy(className = "css-1pqwvz2")
-    public WebElement CreateAccountHolder;
+    public WebElement createAccountHolder;
 
     @FindBy(className = "css-1jb3vzl")
-    public WebElement AccountHolderTitle;
+    public WebElement accountHolderTitle;
 
     @FindBy(name = "email")
     public WebElement email;
@@ -43,12 +43,24 @@ public class CreatePrimaryAccountPage extends SeleniumUtility {
     public WebElement dateOfBirth;
 
     @FindBy(className = "css-jut409")
-    public WebElement CreateAccountBtn;
+    public WebElement createAccountBtn;
 
     @FindBy(className = "css-tidvy5")
-    public WebElement CreateAccountExistError;
+    public WebElement createAccountExistError;
 
     @FindBy(xpath = "//*/div/div[2]/div/div/div/form/div[1]/div")
     public WebElement ageErrorMessage;
+
+    public void fillCreateAccountForm(String Email,String firstName,int gender,String employmentStatus,int title,String lastName,int martialStatus,String dateOfBirth) {
+        sendText(this.email, Email);
+        sendText(this.firstName, firstName);
+        dropDownByValue(this.gender,gender);
+        sendText(this.employmentStatus,employmentStatus);
+        dropDownByValue(this.title,title);
+        sendText(this.lastName, lastName);
+        dropDownByValue(this.maritalStatus,martialStatus);
+        sendText(this.dateOfBirth,dateOfBirth);
+        clickOnElement(this.createAccountBtn);
+    }
 
 }

@@ -14,13 +14,13 @@ TekInsurance extends SeleniumUtility {
     public CreatePrimaryAccountPage createPrimaryAccountPage;
     public CreatePrimaryAccountPageTest createPrimaryAccountPageTest;
     public SignUpPage signUpPage;
-    public SignUpTest signUpTest;
     public LoginPage loginPage;
     public LoginPageTest loginPageTest;
     public UserProfile userProfile;
     public UserProfileTest userProfileTest;
     public PlanPage planPage;
     public PlanPageTest planPageTest;
+    public SignUpTest signUpTest;
 
 
     @BeforeSuite
@@ -32,13 +32,13 @@ TekInsurance extends SeleniumUtility {
         createPrimaryAccountPage=new CreatePrimaryAccountPage();
         createPrimaryAccountPageTest=new CreatePrimaryAccountPageTest();
         signUpPage=new SignUpPage();
-        signUpTest=new SignUpTest();
         loginPage=new LoginPage();
         loginPageTest=new LoginPageTest();
         userProfile=new UserProfile();
         userProfileTest=new UserProfileTest();
         planPage=new PlanPage();
         planPageTest=new PlanPageTest();
+        signUpTest=new SignUpTest();
 
     }
     @AfterSuite

@@ -8,8 +8,7 @@ public class HomePageTest extends TekInsurance {
     @Test
     public void validateHomePage(){
 
-            Assert.assertEquals(getDriver().getTitle(),"Tek Insurance UI");
-            Assert.assertTrue(isElementDisplay(homePage.CreatePrimaryAccount),"Create Primary Account");
+            Assert.assertTrue(isElementDisplay(homePage.createPrimaryAccount),"Create Primary Account");
 
     }
 

@@ -28,7 +28,7 @@ public class RandomValueClass {
     public String generateDate(){
         int day=generateNumber(30,1);
         int month=generateNumber(12,1);
-        int year=generateNumber(2024,2015);
+        int year=random.nextInt((2024-1990)+1)+1990;
         return month+"/"+day+"/"+year;
     }
 

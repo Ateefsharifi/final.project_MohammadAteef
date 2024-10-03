@@ -12,34 +12,37 @@ public class SignUpPage extends SeleniumUtility {
         PageFactory.initElements(getDriver(),this);
     }
 
+    @FindBy(xpath = "//*/div/div[2]/div/div/div/h2[1]")
+    public WebElement signUpValidationPage;
+
     @FindBy(xpath = "//*/div/div[2]/div/div/div/h2[3]")
     public WebElement SignUpValidateEmail;
 
     @FindBy(name = "username")
-    public WebElement CreatedAccountSignUpUsername;
+    public WebElement createdAccountSignUpUsername;
 
     @FindBy(name = "password")
-    public WebElement CreatedAccountSignUpPassword;
+    public WebElement createdAccountSignUpPassword;
 
     @FindBy(name = "confirm")
-    public WebElement CreatedConfirmAccountSignUpConfirmPassword;
+    public WebElement createdConfirmAccountSignUpConfirmPassword;
 
     @FindBy(className = "css-jut409")
-    public WebElement CreatedAccountValidateSubmitBtn;
+    public WebElement createdAccountValidateSubmitBtn;
 
     public void EnterUserName(String username){
-        sendText(CreatedAccountSignUpUsername,username);
+        sendText(createdAccountSignUpUsername,username);
     }
 
     public void EnterPassword(String password){
-        sendText(CreatedAccountSignUpPassword,password);
+        sendText(createdAccountSignUpPassword,password);
     }
 
     public void EnterConfirmPassword(String confirmPassword){
-        sendText(CreatedConfirmAccountSignUpConfirmPassword,confirmPassword);
+        sendText(createdConfirmAccountSignUpConfirmPassword,confirmPassword);
     }
     public void ClickSubmitButton(){
-        clickOnElement(CreatedAccountValidateSubmitBtn);
+        clickOnElement(createdAccountValidateSubmitBtn);
     }
 
 }
