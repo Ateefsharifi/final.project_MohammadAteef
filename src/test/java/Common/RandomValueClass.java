@@ -1,5 +1,7 @@
 package Common;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class RandomValueClass {
@@ -26,10 +28,10 @@ public class RandomValueClass {
         return FirstNames[random.nextInt(FirstNames.length)];
     }
     public String generateDate(){
-        int day=generateNumber(30,1);
-        int month=generateNumber(12,1);
-        int year=random.nextInt((2024-1990)+1)+1990;
-        return month+"/"+day+"/"+year;
+        LocalDate today = LocalDate.now();
+        LocalDate dateOfBirth = today.minusYears(30).minusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        return dateOfBirth.format(formatter);
     }
 
 }

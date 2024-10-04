@@ -23,7 +23,7 @@ TekInsurance extends SeleniumUtility {
     public SignUpTest signUpTest;
 
 
-    @BeforeSuite
+    @BeforeTest
     public void setUpTest(){
         LOGGER.info("Setting up Test and lunching Browser");
         setUpBrowser();
@@ -41,7 +41,7 @@ TekInsurance extends SeleniumUtility {
         signUpTest=new SignUpTest();
 
     }
-    @AfterSuite
+    @AfterTest
     public void testCleanUp(){
         LOGGER.info("Browser Quite");
         quiteBrowser();

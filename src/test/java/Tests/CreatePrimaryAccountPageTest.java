@@ -8,7 +8,7 @@ public class CreatePrimaryAccountPageTest extends TekInsurance {
     public static String validEmail;
     RandomValueClass objRandomValue = new RandomValueClass();
 
-    @Test(priority = 1, testName = "CreatingAccountWithValidEmail")
+    @Test(testName = "CreatingAccountWithValidEmail")
     public void createAccountWithValidEmail() {
         clickOnElement(homePage.createPrimaryAccount);
         Assert.assertTrue(isElementDisplay(createPrimaryAccountPage.createAccountHolder), "primary Account Creation");
@@ -18,7 +18,7 @@ public class CreatePrimaryAccountPageTest extends TekInsurance {
         Assert.assertEquals(getElementText(signUpPage.SignUpValidateEmail),validEmail);
     }
 
-    @Test(priority = 2, testName = "createAccountWithExistingEmail")
+    @Test(testName = "createAccountWithExistingEmail")
     public void createAccountWithExistingEmail() {
         clickOnElement(homePage.createPrimaryAccount);
         Assert.assertTrue(isElementDisplay(createPrimaryAccountPage.createAccountHolder), "primary Account Creation");

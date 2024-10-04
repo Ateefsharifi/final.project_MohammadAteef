@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class LoginPageTest extends TekInsurance {
 
-    @Test(dataProvider = "loginValue")
+    @Test(testName = "navigateToLoginByValidCredential", dataProvider = "validCredential")
     public void navigateToLoginByValidCredential(String UserName,String Password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
@@ -17,7 +17,7 @@ public class LoginPageTest extends TekInsurance {
         clickOnElement(loginPage.SignInBTN);
 
     }
-    @Test(dataProvider = "loginValue")
+    @Test(testName = "navigateToLoginByInvalidCredential", dataProvider = "invalidCredential")
     public void navigateToLoginByInvalidCredential(String UserName,String Password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
@@ -31,10 +31,16 @@ public class LoginPageTest extends TekInsurance {
 
     }
 
-    @DataProvider(name = "loginValue")
-    public String[][] Credential(){
+    @DataProvider(name = "validCredential")
+    public String[][] validCredential(){
        return new String[][] {
                {"supervisor","tek_supervisor"},
+        };
+    }
+    @DataProvider(name = "invalidCredential")
+    public String[][] invalidCredential(){
+        return new String[][] {
+                {"tek_supervisor","tek_supervisor"},
         };
     }
 

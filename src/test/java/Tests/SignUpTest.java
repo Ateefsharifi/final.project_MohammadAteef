@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 public class SignUpTest extends TekInsurance {
 
-    @Test
+    @Test(testName = "creatingAccountSignUp")
     public void creatingAccountSignUp() {
         clickOnElement(homePage.createPrimaryAccount);
         RandomValueClass objRandom=new RandomValueClass();

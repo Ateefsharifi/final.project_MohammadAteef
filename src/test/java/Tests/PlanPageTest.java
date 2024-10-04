@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PlanPageTest extends TekInsurance {
 
-    @Test
+    @Test(testName = "UserProfileDataValidation")
     public void UserProfileDataValidation() throws InterruptedException {
         clickOnElement(homePage.loginBTN);
         sendText(loginPage.UserName,"supervisor");
