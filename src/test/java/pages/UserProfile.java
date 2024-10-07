@@ -13,20 +13,18 @@ public class UserProfile extends SeleniumUtility {
     public WebElement ProfileMenu;
 
     @FindBy(className = "css-1at26de")
-    public WebElement CustomerServicePortal;
+    public WebElement customerServicePortal;
 
     @FindBy(className = "css-1lzp9bh")
-    public WebElement Profile;
+    public WebElement profile;
 
-    @FindBy(css = "body > div:nth-child(3) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) " +
-            "> div:nth-child(4) > div:nth-child(1) > " +
-            "div:nth-child(1) > div:nth-child(4) > p:nth-child(2)")
-    public WebElement SideMenuUserName;
+    @FindBy(xpath = "//div[@data-focus-lock-disabled='false']//div[4]//p[2]")
+    public WebElement sideMenuUserName;
 
     @FindBy(className = "css-1ik4h6n")
-    public WebElement SideMenuProfileClose;
+    public WebElement sideMenuProfileClose;
 
-    @FindBy(className = "css-1x18d5s")
-    public WebElement UserProfileLogOut;
+    @FindBy(xpath = "//button[normalize-space()='Logout']")
+    public WebElement userProfileLogOutBtn;
 
 }

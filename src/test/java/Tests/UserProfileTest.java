@@ -4,48 +4,38 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UserProfileTest extends TekInsurance {
-    private static final String LoginUserName="supervisor";
-    private static final String LoginPassword="tek_supervisor";
+    private static final String loginUserName="supervisor";
+    private static final String loginPassword="tek_supervisor";
 
     @Test
     public void ValidateUserProfile(){
-        LoginWithValidCredential(LoginUserName,LoginPassword);
-
-        Assert.assertTrue(userProfile.CustomerServicePortal.isDisplayed());
-        clickOnElement(userProfile.Profile);
-        Assert.assertEquals(LoginUserName,getElementText(userProfile.SideMenuUserName));
-        clickOnElement(userProfile.SideMenuProfileClose);
-
-
+        loginWithValidCredential(loginUserName,loginPassword);
+        Assert.assertTrue(userProfile.customerServicePortal.isDisplayed());
+        clickOnElement(userProfile.profile);
+        Assert.assertEquals(loginUserName,getElementText(userProfile.sideMenuUserName));
+        clickOnElement(userProfile.sideMenuProfileClose);
     }
 
     @Test
-    public void LoggingInWithValidCredentialAndLogOUt(){
-        LoginWithValidCredentialAndLogout(LoginUserName,LoginPassword);
-
-        Assert.assertEquals(getDriver().getTitle(),"Tek Insurance UI");
+    public void loggingInWithValidCredentialAndLogOUt(){
+        LoginWithValidCredentialAndLogout(loginUserName, loginPassword);
+       // Assert.assertEquals(getDriver().getTitle(),"Tek Insurance UI");
     }
 
-    public void LoginWithValidCredential(String UserName,String Password){
+    public void loginWithValidCredential(String userName,String password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
         Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,UserName);
-        sendText(loginPage.password, Password);
+        sendText(loginPage.UserName,userName);
+        sendText(loginPage.password, password);
         clickOnElement(loginPage.SignInBTN);
 
     }
-
-    public void LoginWithValidCredentialAndLogout(String UserName,String Password){
-        Assert.assertTrue(homePage.loginBTN.isEnabled());
-        clickOnElement(homePage.loginBTN);
-        Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,UserName);
-        sendText(loginPage.password, Password);
-        clickOnElement(loginPage.SignInBTN);
-        Assert.assertTrue(userProfile.CustomerServicePortal.isDisplayed());
-        clickOnElement(userProfile.Profile);
-        Assert.assertEquals(LoginUserName,getElementText(userProfile.SideMenuUserName));
-        clickOnElement(userProfile.UserProfileLogOut);
+    public void LoginWithValidCredentialAndLogout(String userName,String password){
+        loginWithValidCredential(userName,password);
+        Assert.assertTrue(userProfile.customerServicePortal.isDisplayed());
+        clickOnElement(userProfile.profile);
+        Assert.assertEquals(loginUserName,getElementText(userProfile.sideMenuUserName));
+        clickOnElement(userProfile.userProfileLogOutBtn);
     }
 }

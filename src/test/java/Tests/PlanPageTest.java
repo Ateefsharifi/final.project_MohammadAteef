@@ -1,11 +1,9 @@
 package Tests;
-
 import Base.TekInsurance;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -13,14 +11,18 @@ import java.util.List;
 public class PlanPageTest extends TekInsurance {
 
     @Test(testName = "UserProfileDataValidation")
-    public void UserProfileDataValidation() throws InterruptedException {
+    public void UserProfileDataValidation(){
         clickOnElement(homePage.loginBTN);
         sendText(loginPage.UserName,"supervisor");
         sendText(loginPage.password, "tek_supervisor");
         clickOnElement(loginPage.SignInBTN);
         clickOnElement(planPage.planLink);
+        planRecordFinding(planPage.planTable);
 
-        WebElement table = findElement(planPage.planTable);
+    }
+
+    public void planRecordFinding(WebElement element){
+        WebElement table = findElement(element);
         List<WebElement> rows=table.findElements(By.tagName("tr"));
         for(int r=1; r<4; r++){
             WebElement row=rows.get(r);

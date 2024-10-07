@@ -1,8 +1,10 @@
 package pages;
 
 import Utility.SeleniumUtility;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -19,15 +21,5 @@ public class PlanPage extends SeleniumUtility {
 
     @FindBy(xpath = "//table[@class='chakra-table css-5605sr']")
     public WebElement planTable;
-
-    @FindBy(xpath = "//*/div/div[3]/div/div/div/div/table/tbody/tr")
-    public WebElement tableRow;
-
-    @FindBy(xpath = "//*/div/div[3]/div/div/div/div/table/tbody/tr/td")
-    public WebElement tableCol;
-
-
-
-
 
 }

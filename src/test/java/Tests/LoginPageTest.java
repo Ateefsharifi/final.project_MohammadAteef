@@ -18,12 +18,12 @@ public class LoginPageTest extends TekInsurance {
 
     }
     @Test(testName = "navigateToLoginByInvalidCredential", dataProvider = "invalidCredential")
-    public void navigateToLoginByInvalidCredential(String UserName,String Password){
+    public void navigateToLoginByInvalidCredential(String userName,String password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
         Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,UserName);
-        sendText(loginPage.password, Password);
+        sendText(loginPage.UserName,userName);
+        sendText(loginPage.password, password);
         clickOnElement(loginPage.SignInBTN);
         if(loginPage.InvalidLoginError.isDisplayed()){
             Assert.assertTrue(loginPage.InvalidLoginError.isDisplayed(),"credential is invalid");

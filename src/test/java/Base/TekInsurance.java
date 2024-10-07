@@ -21,6 +21,8 @@ TekInsurance extends SeleniumUtility {
     public PlanPage planPage;
     public PlanPageTest planPageTest;
     public SignUpTest signUpTest;
+    public AccountPage accountsPage;
+    public AccountTests accountsTest;
 
 
     @BeforeTest
@@ -39,6 +41,8 @@ TekInsurance extends SeleniumUtility {
         planPage=new PlanPage();
         planPageTest=new PlanPageTest();
         signUpTest=new SignUpTest();
+        accountsPage=new AccountPage();
+        accountsTest=new AccountTests();
 
     }
     @AfterTest
