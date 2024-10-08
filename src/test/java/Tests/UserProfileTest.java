@@ -25,10 +25,10 @@ public class UserProfileTest extends TekInsurance {
     public void loginWithValidCredential(String userName,String password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
-        Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,userName);
+        Assert.assertEquals(getElementText(loginPage.signInText),"Sign in to your Account");
+        sendText(loginPage.userName,userName);
         sendText(loginPage.password, password);
-        clickOnElement(loginPage.SignInBTN);
+        clickOnElement(loginPage.signInBTN);
 
     }
     public void LoginWithValidCredentialAndLogout(String userName,String password){

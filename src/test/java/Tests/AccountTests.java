@@ -12,40 +12,36 @@ public class AccountTests extends TekInsurance {
     @Test
     public void verifyAccountRecord() throws InterruptedException {
         clickOnElement(homePage.loginBTN);
-        sendText(loginPage.UserName,"supervisor");
+        sendText(loginPage.userName,"supervisor");
         sendText(loginPage.password, "tek_supervisor");
-        clickOnElement(loginPage.SignInBTN);
+        clickOnElement(loginPage.signInBTN);
         Assert.assertEquals(getElementText(accountsPage.dashBoard),"Dashboard");
         clickOnElement(accountsPage.accountLink);
-        accountsRecords(accountsPage.accountTable);
-    }
-
-    public void accountsRecords(WebElement element){
-        WebElement table = findElement(element);
+        WebElement table = findElement(accountsPage.accountTable);
         List<WebElement> rows=table.findElements(By.tagName("tr"));
         WebElement recordsIndicator=findElement(accountsPage.accountRecordsIndicator);
         Select drpDown=new Select(recordsIndicator);
         WebElement selectedValue=drpDown.getFirstSelectedOption();
-        String defaultDrpCount=selectedValue.getText();
-        switch (defaultDrpCount){
-            case "5":
-                Assert.assertEquals("5",defaultDrpCount);
-                break;
-            case "10":
-                Assert.assertEquals("10",defaultDrpCount);
-                break;
-            case "25":
-                Assert.assertEquals("25",defaultDrpCount);
-                break;
-            case "50":
-                Assert.assertEquals("50",defaultDrpCount);
-                break;
-            default:
-
-        }
-
+        Assert.assertEquals(rows.size()-1,5);
+        Assert.assertEquals(getElementText(selectedValue),"Show 5");
     }
 
-
+    @Test
+    public void verifyAccountRecordsOnDrpValue() throws InterruptedException {
+        clickOnElement(homePage.loginBTN);
+        sendText(loginPage.userName,"supervisor");
+        sendText(loginPage.password, "tek_supervisor");
+        clickOnElement(loginPage.signInBTN);
+        Assert.assertEquals(getElementText(accountsPage.dashBoard),"Dashboard");
+        clickOnElement(accountsPage.accountLink);
+        WebElement recordsIndicator=findElement(accountsPage.accountRecordsIndicator);
+        Select drpDown=new Select(recordsIndicator);
+        drpDown.selectByValue("10");
+        Thread.sleep(2000);
+        int drpSize=drpDown.getOptions().size();
+        WebElement table = findElement(accountsPage.accountTable);
+        List<WebElement> rows=table.findElements(By.tagName("tr"));
+        Assert.assertEquals(rows.size()-1,10);
+    }
 
 }

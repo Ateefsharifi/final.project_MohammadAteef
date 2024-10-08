@@ -11,22 +11,22 @@ public class LoginPageTest extends TekInsurance {
     public void navigateToLoginByValidCredential(String UserName,String Password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
-        Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,UserName);
+        Assert.assertEquals(getElementText(loginPage.signInText),"Sign in to your Account");
+        sendText(loginPage.userName,UserName);
         sendText(loginPage.password, Password);
-        clickOnElement(loginPage.SignInBTN);
+        clickOnElement(loginPage.signInBTN);
 
     }
     @Test(testName = "navigateToLoginByInvalidCredential", dataProvider = "invalidCredential")
     public void navigateToLoginByInvalidCredential(String userName,String password){
         Assert.assertTrue(homePage.loginBTN.isEnabled());
         clickOnElement(homePage.loginBTN);
-        Assert.assertEquals(getElementText(loginPage.SignInText),"Sign in to your Account");
-        sendText(loginPage.UserName,userName);
+        Assert.assertEquals(getElementText(loginPage.signInText),"Sign in to your Account");
+        sendText(loginPage.userName,userName);
         sendText(loginPage.password, password);
-        clickOnElement(loginPage.SignInBTN);
-        if(loginPage.InvalidLoginError.isDisplayed()){
-            Assert.assertTrue(loginPage.InvalidLoginError.isDisplayed(),"credential is invalid");
+        clickOnElement(loginPage.signInBTN);
+        if(loginPage.invalidLoginError.isDisplayed()){
+            Assert.assertTrue(loginPage.invalidLoginError.isDisplayed(),"credential is invalid");
         }
 
     }

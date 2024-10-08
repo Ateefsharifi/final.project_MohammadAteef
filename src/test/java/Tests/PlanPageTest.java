@@ -13,9 +13,9 @@ public class PlanPageTest extends TekInsurance {
     @Test(testName = "UserProfileDataValidation")
     public void UserProfileDataValidation(){
         clickOnElement(homePage.loginBTN);
-        sendText(loginPage.UserName,"supervisor");
+        sendText(loginPage.userName,"supervisor");
         sendText(loginPage.password, "tek_supervisor");
-        clickOnElement(loginPage.SignInBTN);
+        clickOnElement(loginPage.signInBTN);
         clickOnElement(planPage.planLink);
         planRecordFinding(planPage.planTable);
 

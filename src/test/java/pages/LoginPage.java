@@ -11,18 +11,18 @@ public class LoginPage extends SeleniumUtility {
     }
 
     @FindBy(xpath = "//*/div/div[2]/div/div/div/div/div")
-    public WebElement InvalidLoginError;
+    public WebElement invalidLoginError;
 
     @FindBy(xpath = "//*/div/div[2]/div/div/div/h2")
-    public WebElement SignInText;
+    public WebElement signInText;
 
     @FindBy(name = "username")
-    public WebElement UserName;
+    public WebElement userName;
 
     @FindBy(name = "password")
     public WebElement password;
 
     @FindBy(className = "css-jut409")
-    public WebElement SignInBTN;
+    public WebElement signInBTN;
 
 }

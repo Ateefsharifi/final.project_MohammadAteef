@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreatePrimaryAccountPageTest extends TekInsurance {
-    public static String validEmail;
     RandomValueClass objRandomValue = new RandomValueClass();
 
     @Test(testName = "CreatingAccountWithValidEmail")

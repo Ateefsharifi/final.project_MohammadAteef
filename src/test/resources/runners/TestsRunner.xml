@@ -36,4 +36,22 @@
             </class>
         </classes>
     </test>
+    <test name="UserProfileDataValidation">
+        <classes>
+            <class name="Tests.PlanPageTest">
+                <methods>
+                    <include name="navigateToLoginByInvalidCredential" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verifyAccountRecord">
+        <classes>
+            <class name="Tests.AccountTests">
+                <methods>
+                    <include name="navigateToLoginByInvalidCredential" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
